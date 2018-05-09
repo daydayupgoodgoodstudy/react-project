@@ -1,2 +1,5 @@
 
-node_modules/
+node_modules/  
+ #模块不提交
+dist/          
+ #打包文件不提交
