@@ -1,0 +1,7 @@
+//单行文本截取
+@mixin singleline-ellipsis($substract:0){//`$substract`单位为% 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    width: 100% - $substract; 
+}

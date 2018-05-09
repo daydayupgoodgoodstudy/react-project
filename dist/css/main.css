@@ -1,0 +1,160 @@
+.nav_middle {
+  padding: 0;
+  margin: auto;
+  height: 100%;
+  width: 50%; }
+
+.nav_middle li {
+  width: 20%;
+  vertical-align: middle;
+  line-height: 1;
+  float: left;
+  text-align: center;
+  /* padding:7px; */
+  list-style: none; }
+
+.nav_middle li h3 {
+  margin: 0;
+  padding: 37px 0; }
+.Top_nav_box {
+  background: '#fff';
+  padding: 0;
+  margin: 0;
+  height: 0.3rem;
+  line-height: 1; }
+
+.nav_left {
+  float: left;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: auto;
+  text-align: center; }
+
+.nav_left li {
+  font-size: 0.14rem;
+  line-height: 2;
+  height: 100%;
+  vertical-align: middle;
+  margin-left: 0.15rem;
+  padding: 0.08rem;
+  float: left;
+  list-style: none; }
+
+/* .nav_left li a {
+
+  line-height: 0.3rem;
+  display: table-cell;
+  vertical-align: middle;
+}  */
+.nav_right {
+  float: right;
+  padding: 0;
+  margin: 0;
+  height: 100%; }
+
+.nav_right li {
+  font-size: 0.14rem !important;
+  line-height: 1;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: 0.15rem;
+  padding: 0.08rem;
+  float: right;
+  list-style: none; }
+
+.single-foo-menu {
+  position: absolute;
+  z-index: 90 !important;
+  width: 100%; }
+
+.single-menu-active .single-top-nav-bar {
+  z-index: 90; }
+
+.single-top-nav-bar {
+  position: relative;
+  background-color: #008AE6;
+  color: #FFF; }
+
+.am-navbar-title {
+  color: #FFF !important; }
+
+.menu-mask {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 89; }
+@charset "UTF-8";
+/* 轮播图 */
+.carousel_header .ant-carousel .slick-slide {
+  text-align: center;
+  max-height: 500px;
+  line-height: 500px;
+  background: #364d79;
+  overflow: hidden; }
+
+.carousel_header .ant-carousel .slick-slide h3 {
+  color: #fff; }
+
+.carousel_header .ant-carousel .slick-slide img {
+  width: 100%;
+  height: 100%; }
+
+/* contetn-inner */
+.inner {
+  padding: 16px;
+  margin-top: 20px;
+  width: 100%;
+  display: inline-block; }
+@charset "UTF-8";
+.Login_page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #789262; }
+
+/* input:focus { 
+  outline: none; 
+  background:none;    
+  outline:none;    
+  border:0px; 
+}  */
+input {
+  -moz-appearance: none !important;
+  /* Firefox */
+  -webkit-appearance: none !important;
+  /* Safari 和 Chrome */
+  outline: none;
+  background-color: transparent !important; }
+
+input:-webkit-autofill, input:focus:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  outline: none; }
+
+.Login_page .login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10px;
+  width: 60%;
+  /* margin-top: 200px; */
+  max-width: 300px;
+  z-index: 999; }
+
+.Login_page .login-form-forgot {
+  float: right; }
+
+.Login_page .login-form-button {
+  width: 100%;
+  z-index: 2;
+  background-color: transparent; }
+
+.Login_page .body_login {
+  /* background: url("/assets/images/timg.jpeg"); */
+  width: 100%;
+  height: 100%; }

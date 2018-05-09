@@ -1,0 +1,21 @@
+.nav_middle{
+    padding: 0; 
+    margin: auto;
+     height: 100%;
+     width: 50%;
+}
+
+.nav_middle li{
+    width: 20%;
+    vertical-align:middle;
+    line-height: 1;
+    float: left;
+    text-align: center;
+    /* padding:7px; */
+    list-style: none;
+}
+
+.nav_middle li h3{
+    margin: 0;
+    padding: 37px 0;
+}
