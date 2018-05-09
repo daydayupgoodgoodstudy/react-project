@@ -6,7 +6,7 @@ import configStore from './store/configStore';
 import { Provider } from 'react-redux';
 // HashRouter
 import { createLogger } from 'redux-logger';
-import { BrowserRouter as Router, Switch, Route, IndexRoute, Link, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, IndexRoute, Link, Redirect } from 'react-router-dom';
 import Login from './contents/login';
 
 import asyncComponent from './Bundle';
