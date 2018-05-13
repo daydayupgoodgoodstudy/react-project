@@ -272,8 +272,8 @@
 <body>
   <div id="wrapper"></div>
   <!-- 以750px的设计稿为基准 -->
-  <!-- <script>
-    (function () {
+  <script>
+    (function (window) {
       function w() {
         var r = document.documentElement;
         var a = r.getBoundingClientRect().width;
@@ -289,8 +289,8 @@
         clearTimeout(t);
         t = setTimeout(w, 300)
       }, false);
-    })();
-  </script> -->
+    })(window);
+  </script>
   <!-- <script>
       window.onload = function() {
         //6.4根据设计稿的横向分辨率640/100得来的。
@@ -298,21 +298,6 @@
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
         
       }
-  </script> -->
-  <!-- <script>
-    (function (doc, win) {
-      var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
-          var clientWidth = docEl.clientWidth;
-          if (!clientWidth) return;
-          if (clientWidth > 750) clientWidth = 750;
-          docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
-        };
-      if (!doc.addEventListener) return;
-      win.addEventListener(resizeEvt, recalc, false);
-      doc.addEventListener('DOMContentLoaded', recalc, false);
-    })(document, window);
   </script> -->
 
   <script type=text/javascript src=/vendor.5c9f8.js></script>

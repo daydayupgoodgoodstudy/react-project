@@ -7,7 +7,7 @@ export const logout=(access_token,history)=>{
         axios.post('/api/users/logout',{access_token})
             .then(response => {
                 Cookie.remove('access_token')
-                history.push('/');
+                history.push('/login');
                 message.success("已退出登录")
             })
             .catch(err => {

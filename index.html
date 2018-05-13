@@ -271,49 +271,6 @@
 
 <body>
   <div id="wrapper"></div>
-  <!-- 以750px的设计稿为基准 -->
-  <!-- <script>
-    (function () {
-      function w() {
-        var r = document.documentElement;
-        var a = r.getBoundingClientRect().width;
-        if (a > 750) {
-          a = 750;
-        };
-        rem = a / 7.5;
-        r.style.fontSize = rem + 'px';
-      };
-      var t;
-      w();
-      window.addElementListener('resize', function () {
-        clearTimeout(t);
-        t = setTimeout(w, 300)
-      }, false);
-    })();
-  </script> -->
-  <!-- <script>
-      window.onload = function() {
-        //6.4根据设计稿的横向分辨率640/100得来的。
-        //此值和设计稿有关，具体需求具体修改暂时以640ox为准
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
-        
-      }
-  </script> -->
-  <!-- <script>
-    (function (doc, win) {
-      var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
-          var clientWidth = docEl.clientWidth;
-          if (!clientWidth) return;
-          if (clientWidth > 750) clientWidth = 750;
-          docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
-        };
-      if (!doc.addEventListener) return;
-      win.addEventListener(resizeEvt, recalc, false);
-      doc.addEventListener('DOMContentLoaded', recalc, false);
-    })(document, window);
-  </script> -->
 
   <script type=text/javascript src=/bundle.js></script>
 </body>

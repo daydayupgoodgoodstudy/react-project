@@ -2,19 +2,15 @@ import React, { Component, cloneElement } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Cookie from 'react-cookies';
-import { logout } from './nav_action';
+import { logout } from '../../action/nav_action';
 import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
-import "./Top_nav.scss";
+import "../../asset/css/Top_nav.scss";
 
 
-const data = [
+let data = [
   {
     value: '1',
     label: '首页',
-    isLeaf: true,
-  }, {
-    value: '2',
-    label: '智能硬件',
     isLeaf: true,
   },
   {
@@ -47,20 +43,23 @@ const data = [
     ]
   },
   {
-    value: '5',
-    label: '退出登录',
-    isLeaf: true,
+    value: "7",
+    label: "历史今日",
+    isLeaf: true
   },
-
+  {}
 ];
+
+
 
 class Top_nav_mobile extends Component {
   constructor(...args) {
     super(...args);
     this.map_to = this.map_to.bind(this);
+
     this.state = {
       initData: '',
-      show: false,
+      show: false
     };
   }
   map_to = (value) => {
@@ -70,33 +69,38 @@ class Top_nav_mobile extends Component {
     });
     switch (value) {
       case "1":
-        return history.push("/map");
+        return history.push("/home/map");
       case "2":
-        return history.push("/map/mapplugins")
+        return history.push("/home/mapplugins")
       case "3":
-        return history.push("/map/mapeven");
+        return history.push("/home/mapeven");
       case "4":
-        return history.push("/map/mapmarkers")
+        return history.push("/home/mapmarkers")
       default:
         return
     }
   }
 
   onChange = (value) => {
-    console.log(value)
     const { dispatch, history } = this.props
     let label = '';
+    this.setState({
+      show: false,
+    });
     switch (value[0]) {
       case "1":
         return history.push("/home");
-      case "5":
+      case "998":
         return dispatch(logout(Cookie.load("access_token"), history))
+      case "999":
+        return history.push("/login");
       case "6":
-        return this.map_to(value[1])
+        return this.map_to(value[1]);
+      case "7":
+        return history.push("/home/hisday");
       default:
         return;
     }
-    console.log(label);
   }
   handleClick = (e) => {
     e.preventDefault(); // Fix event propagation on Android
@@ -105,6 +109,20 @@ class Top_nav_mobile extends Component {
     });
     // mock for async data loading
     if (!this.state.initData) {
+      data.pop()
+      if (Cookie.load("access_token")) {
+        data.push({
+          value: '998',
+          label: '退出登录',
+          isLeaf: true,
+        })
+      } else {
+        data.push({
+          value: '999',
+          label: '登陆',
+          isLeaf: true,
+        })
+      }
       setTimeout(() => {
         this.setState({
           initData: data,
@@ -155,12 +173,5 @@ class Top_nav_mobile extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    num: state.reducers.num,
-    name: state.reducers.name
-  }
-}
 
-
-export default withRouter(connect(mapStateToProps)(Top_nav_mobile))
+export default withRouter(Top_nav_mobile)

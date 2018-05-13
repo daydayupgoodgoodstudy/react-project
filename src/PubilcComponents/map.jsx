@@ -4,7 +4,7 @@ import { Map } from 'react-amap';
 
 export const Map_default = (props) => {
     return (
-        <div style={{ width: "100%", height: "100%" }}>
+        <div style={{ width: "100%", height: 372 }}>
             <Map amapkey={"3f20764a4b3545292bb4d4a940799dd4"} />
         </div>
     )
@@ -26,7 +26,7 @@ export const Map_plugins = (props) => {
             },
         }
     ]
-    return <div style={{ width: '100%', height: '100%' }}>
+    return <div style={{ width: '100%', height: 372 }}>
         <Map amapkey={"3f20764a4b3545292bb4d4a940799dd4"}
             plugins={plugins}
         />

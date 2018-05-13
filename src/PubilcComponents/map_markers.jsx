@@ -10,8 +10,8 @@ const randomMarker = (len) => (
     position: randomPosition()
   }))
 );
-class Map_markers extends Component{
-  constructor(){
+class Map_markers extends Component {
+  constructor() {
     super();
     this.state = {
       markers: randomMarker(100),
@@ -26,11 +26,11 @@ class Map_markers extends Component{
     })
   }
 
-  render(){   
+  render() {
     return <div>
-      <div style={{width: '100%', height: 372}}>
+      <div style={{ width: '100%', height: 372 }}>
         <Map plugins={['ToolBar']} center={this.state.center} zoom={6}>
-          <Markers 
+          <Markers
             markers={this.state.markers}
           />
         </Map>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Row, Col } from 'antd';
 
 import Cookie from 'react-cookies';
-import "./goods";
+import "../asset/css/goods";
 
 
 class Shop_box extends Component {

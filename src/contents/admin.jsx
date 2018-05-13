@@ -23,6 +23,8 @@ import Home_content2 from '../components/home_content2';
 import Home_content3 from '../components/home_content3';
 import Home_content4 from '../components/home_content4';
 
+import Hisday from '../components/hisday.jsx';
+
 import Icon_up from '../components/icon_up.jsx';
 
 import "../asset/css/header";
@@ -58,28 +60,27 @@ class Admin extends React.Component {
                     {/* 轮播图 */}
                     {/* 主体内容 */}
                     <Content>
-                        <Content style={{ background: '#fff', padding: 0, maxHeight: 500, lineHeight: 500 }} className="carousel_header">
+                        {/* <Content style={{ background: '#fff', padding: 0, maxHeight: 500, lineHeight: 500 }} className="carousel_header">
                             <Carousel autoplay>
                                 <div><img src="http://echarts.baidu.com/examples/data/thumb-dark/map-parallel-prices.png" alt="" /></div>
                                 <div><img src="http://echarts.baidu.com/examples/data/thumb-dark/dataset-default.png" alt="" /></div>
                                 <div><img src="http://echarts.baidu.com/examples/data/thumb-dark/custom-wind.png" alt="" /></div>
                                 <div><img src="http://echarts.baidu.com/examples/data/thumb-dark/custom-error-bar.png" alt="" /></div>
                             </Carousel>
-                        </Content>
+                        </Content> */}
                         <Content className="inner">
                             <Route exact path='/home' component={Home_content1} />
                             <Route exact path='/home' component={Icon_up} />
                             <Route exact path={`${this_url}/two`} component={Home_content2} />
                             <Route exact path={`${this_url}/three`} component={Home_content3} />
                             <Route exact path={`${this_url}/four`} component={Home_content4} />
+                            <Route exact path={`${this_url}/hisday`} component={Hisday} />
                         </Content>
                     </Content>
                 </Layout>
             </div>
         )
-
     }
-
 }
 
 function mapStateToProps(state) {

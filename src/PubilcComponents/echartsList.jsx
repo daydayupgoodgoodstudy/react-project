@@ -3,10 +3,10 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Row, Col } from 'antd';
 import Cookie from 'react-cookies';
-import Shop_box from './shop_box';
-import { Get_echarts_list, clear } from '../action/home'
+import { Get_echarts_list, clear } from '../action/home';
+import Shop_box from "../PubilcComponents/shop_box.jsx";
 
-class Home_content1 extends Component {
+class echartsList extends Component {
     constructor(props) {
         super(props);
         this.state = { content1_data: [] }
@@ -17,17 +17,18 @@ class Home_content1 extends Component {
         }
     }
     handler() {
-        let {dispatch ,home} = this.props;
-
+        let { dispatch, home } = this.props;
+        // alert(11)
         if (!home.loading) {
+            // debugger
             let yTop = document.body.scrollTop || document.documentElement.scrollTop,
                 elementHeight = document.body.scrollHeight,
                 clientHeight = document.body.clientHeight;
-            if (elementHeight * 0.75 < yTop + clientHeight * 0.5) {
+            //距离最底部100px的时候加载下一页
+            if (elementHeight - 100 < yTop + clientHeight) {
                 dispatch(Get_echarts_list(home.content1_Pagination.currentPage + 1, home.content1_Pagination.pageSize));
             }
         }
-
     }
 
     componentDidMount() {
@@ -87,4 +88,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps)(Home_content1)
+export default connect(mapStateToProps)(echartsList)
