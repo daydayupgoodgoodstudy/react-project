@@ -174,4 +174,4 @@ class Top_nav_mobile extends Component {
 }
 
 
-export default withRouter(Top_nav_mobile)
+export default withRouter(connect()(Top_nav_mobile))

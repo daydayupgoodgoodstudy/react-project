@@ -4,26 +4,34 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import configStore from './store/configStore';
 import { Provider } from 'react-redux';
+import Loadable from 'react-loadable';
 // HashRouter
+import { render } from 'react-dom';
+
 import { createLogger } from 'redux-logger';
 import { HashRouter as Router, Switch, Route, IndexRoute, Link, Redirect } from 'react-router-dom';
 
-// import Login from './contents/login';
-// import asyncComponent from './Bundle';
-// const Admin = asyncComponent(() => import("./contents/admin.jsx"));
-import PcWeb from "./PcWeb/index";
-import MobileWeb from "./MobileWeb/index";
+// import PcWeb from "./PcWeb/index";
+// import MobileWeb from "./MobileWeb/index";
 
-
-
-
-
-const logger = createLogger();
 const store = configStore();
-// import 'antd/dist/antd.css';
 
+//loading可以替换成模块 
 
-// axios.defaults.headers.common['Authorization'] = "TvSm6Y6v8g0TCqIXSt7KvsMPax4FW3CkQXBovUCb0wAhqtba1TgXVHG3Vy7Dme7z";
+const MobileWeb = Loadable({
+  loader: () => import('./MobileWeb/index'),
+  loading(){
+    return <div>Loading...</div>
+  },
+});
+
+const PcWeb = Loadable({
+  loader: () => import('./PcWeb/index'),
+  loading(){
+    return <div>Loading...</div>
+  },
+});
+
 
 // 1 安卓  2 ios 3 其他 判断终端
 const shell = function () {
@@ -57,26 +65,13 @@ const isPC = function () {
 
 const c = isPC() ? <Route component={PcWeb} /> : <Route component={MobileWeb} />;
 
-console.log(isPC, '++++')
-const render = (a) => 
 ReactDOM.render(
   <Provider store={store}>
-    <Router onUpdate={a}>
-      <div>
+    <Router>
         <Switch>
           {c}
-          {/* <Route path="/" component={MobileWeb} /> */}
-          {/* <Route exact path="/" render={() => <Redirect to="/login" />} />
-            <Route path="/home" component={Admin} />
-            <Route exact path="/login" component={Login} />
-            <Route path="/map" component={Maps} /> */}
         </Switch>
-      </div>
     </Router>
   </Provider>,
   document.getElementById('wrapper')
 );
-
-
-store.subscribe(render);
-render();

@@ -23,8 +23,8 @@ module.exports = {
                 //localhost:3000是接口地址
                 // target: 'http://172.18.11.129:3000/',
                 // target: 'http://172.18.11.211:3000/',
-                // target: 'http://119.29.223.81:3000/',
-                 target: 'http://localhost:3000/',
+                target: 'http://119.29.223.81:3000/',
+                //  target: 'http://localhost:3000/',
                 changeOrigin: true,
 
             }

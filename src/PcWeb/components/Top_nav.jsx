@@ -2,10 +2,10 @@ import React, { Component, cloneElement } from 'react';
 import { Link ,withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Layout, Form, Icon, message, Carousel, Input, Button, Checkbox } from 'antd';
-import { logout } from './nav_action';
+import { logout } from '../../action/nav_action';
 const { Header, Content, Footer } = Layout;
 import Cookie from 'react-cookies';
-import "./Top_nav.scss";
+import "../../asset/css/Top_nav.scss";
 
 class Top_nav extends Component {
     constructor(props) {

@@ -4,17 +4,15 @@ import Helmet from "react-helmet";
 import { connect } from 'react-redux';
 import { Form, Icon, Input, Button } from 'antd';
 import {  Route, Link } from "react-router-dom";
-import { login , logout,register } from '../action/login';
+import { login , logout,register } from '../../action/login';
 // import 'antd/dist/antd.css'; 
 import Cookie from 'react-cookies';
-import Canvas from '../components/canvs/canvs.jsx';
+import Canvas from '../../PubilcComponents/canvs.jsx';
 
 
 const FormItem = Form.Item;
 
-
-
-import '../asset/css/login';
+import '../../asset/css/login';
 
 
 class Login extends React.Component {

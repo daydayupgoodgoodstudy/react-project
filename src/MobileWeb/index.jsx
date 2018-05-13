@@ -2,7 +2,7 @@
 import React from 'react';
 import { Switch, Route, IndexRoute, Link, Redirect } from 'react-router-dom';
 import Home from "./contents/home";
-import Login from '../contents/login';
+import Login from './components/login';
 
 
 class MIndex extends React.Component {

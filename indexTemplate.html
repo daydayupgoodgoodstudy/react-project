@@ -24,9 +24,9 @@
     /* @charset "utf-8";  */
 
     /* 
-@名称: base 
-@功能: 重设浏览器默认样式 
-*/
+    @名称: base 
+    @功能: 重设浏览器默认样式 
+    */
 
     /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 
@@ -271,35 +271,6 @@
 
 <body>
   <div id="wrapper"></div>
-  <!-- 以750px的设计稿为基准 -->
-  <script>
-    (function (window) {
-      function w() {
-        var r = document.documentElement;
-        var a = r.getBoundingClientRect().width;
-        if (a > 750) {
-          a = 750;
-        };
-        rem = a / 7.5;
-        r.style.fontSize = rem + 'px';
-      };
-      var t;
-      w();
-      window.addElementListener('resize', function () {
-        clearTimeout(t);
-        t = setTimeout(w, 300)
-      }, false);
-    })(window);
-  </script>
-  <!-- <script>
-      window.onload = function() {
-        //6.4根据设计稿的横向分辨率640/100得来的。
-        //此值和设计稿有关，具体需求具体修改暂时以640ox为准
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
-        
-      }
-  </script> -->
-
   <script type=text/javascript src=/vendor.5c9f8.js></script>
 </body>
 

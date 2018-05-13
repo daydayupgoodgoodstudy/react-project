@@ -1,7 +1,7 @@
 import { applyMiddleware , createStore } from 'redux';
 // import thunkMiddleware from 'redux-thunk';
 import rootReducer from '../reducers/index';
-// import DevTools from 'containers/DevTools'
+
 import thunk from 'redux-thunk';
 
 import {createLogger}  from 'redux-logger';
@@ -11,18 +11,11 @@ const login_token = store => next => action => {
   return result;
 };
 
-// export default logger;
-
 export default function configureStore(preloadedState) {
   const store = createStore(
     rootReducer,
     preloadedState,
     applyMiddleware(thunk,logger)
-    // preloadedState,
-    // compose(
-    //   applyMiddleware(thunkMiddleware),
-    //   DevTools.instrument()
-    // )
   )
 
 //   if (module.hot) {

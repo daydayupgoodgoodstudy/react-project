@@ -6,7 +6,7 @@ export const register=(data)=>{
     return (dispatch) => {
         axios.post('/api/users/register',{username:data.username,password:data.password})
             .then(response => {
-                message.success("登录成功");
+                // message.success("登录成功");
                 // dispatch({
                 //     type: "REGISTER",
                 //     data: response.data.data,
