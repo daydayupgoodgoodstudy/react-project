@@ -15,8 +15,6 @@ import Map_even, { Map_default, Map_plugins } from '../../PubilcComponents/map.j
 import Map_markers from "../../PubilcComponents/map_markers.jsx";
 import Hisday from "../components/hisday";
 
-import "../../asset/css/header";
-
 class Home extends React.Component {
 
     componentWillMount() {
@@ -37,14 +35,12 @@ class Home extends React.Component {
                 <Layout>
                     <Top_nav_mobile />
                     <Content>
-                        <Content className="inner">
                             <Route exact path='/home' component={echartsList} />
                             <Route exact path={`${this_url}/map`} component={Map_default} />
                             <Route exact path={`${this_url}/mapplugins`} component={Map_plugins} />
                             <Route exact path={`${this_url}/mapeven`} component={Map_even} />
                             <Route exact path={`${this_url}/mapmarkers`} component={Map_markers} />
                             <Route exact path={`${this_url}/hisday`} component={Hisday} />
-                        </Content>
                     </Content>
                 </Layout>
             </div>

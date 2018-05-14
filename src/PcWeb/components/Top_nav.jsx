@@ -5,7 +5,7 @@ import { Layout, Form, Icon, message, Carousel, Input, Button, Checkbox } from '
 import { logout } from '../../action/nav_action';
 const { Header, Content, Footer } = Layout;
 import Cookie from 'react-cookies';
-import "../../asset/css/Top_nav.scss";
+import "../../asset/Pcss/Top_nav.scss";
 
 class Top_nav extends Component {
     constructor(props) {

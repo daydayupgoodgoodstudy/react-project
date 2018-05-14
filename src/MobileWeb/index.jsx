@@ -1,9 +1,7 @@
 
 import React from 'react';
 import { Switch, Route, IndexRoute, Link, Redirect } from 'react-router-dom';
-import Home from "./contents/home";
-import Login from './components/login';
-
+import { Home, Login } from "./loadroute";
 
 class MIndex extends React.Component {
 
@@ -14,6 +12,7 @@ class MIndex extends React.Component {
                 <Route exact path="/" render={() => <Redirect to="/home" />} />
                 <Route path="/home" component={Home} />
                 <Route path="/login" component={Login} />
+                <Route render={() => <Redirect to="/home" />} />
             </Switch>
         )
     }

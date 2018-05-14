@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Cookie from 'react-cookies';
 import { logout } from '../../action/nav_action';
 import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
-import "../../asset/css/Top_nav.scss";
+import "../../asset/Mcss/Top_nav.scss";
 
 
 let data = [

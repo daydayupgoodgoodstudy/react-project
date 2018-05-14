@@ -2,7 +2,7 @@
 import React from 'react';
 import { Switch, Route, IndexRoute, Link, Redirect } from 'react-router-dom';
 import Home from "./contents/home";
-import Login from '../MobileWeb/components/login';
+import Login from '../MobileWeb/contents/login';
 
 
 class PIndex extends React.Component {

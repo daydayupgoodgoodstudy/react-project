@@ -26,7 +26,6 @@ module.exports = {
                 target:"http://119.29.223.81:3000/",
                 // target: 'http://localhost:3000/',
                 changeOrigin: true,
-
             }
         }
     },
@@ -74,50 +73,81 @@ module.exports = {
             //sass
             {
                 test: /\.scss$/,
-                
-                loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                importLoaders: 2 // css-loader options
-                            }
-                        },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                config: {
-                                    path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
-                                }
-                            } // postcss-loader options
-                        },
-                        {
-                            loader: 'sass-loader',
-                            options: {} // sass-loader options
-                        }]
-                }),
-                // use: [{
-                //     loader: 'style-loader',
-                //     options: {} // style-loader options
-                // }, {
-                //     loader: 'css-loader',
-                //     options: {
-                //         importLoaders: 2 // css-loader options
-                //     }
-                // }, 
-                // {
-                //     loader: 'postcss-loader',
-                //     options: {
-                //         config: {
-                //             path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
-                //           }
-                //     } // postcss-loader options
-                // }, 
-                // {
-                //     loader: 'sass-loader',
-                //     options: {} // sass-loader options
-                // }]
+                include: path.resolve(__dirname, "src/asset/Publiccss"),
+                use: [{
+                    loader: 'style-loader',
+                    options: {} // style-loader options
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 2 // css-loader options
+                    }
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        config: {
+                            path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
+                        }
+                    } // postcss-loader options
+                },
+                {
+                    loader: 'sass-loader',
+                    options: {} // sass-loader options
+                }]
+            },
+
+            //mobile编译
+            {
+                test: /\.scss$/,
+                include: path.resolve(__dirname, "src/asset/Mcss"),
+                use: [{
+                    loader: 'style-loader',
+                    options: {} // style-loader options
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 2 // css-loader options
+                    }
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        config: {
+                            path: 'postcss.config.mobile.js'  // 这个得在项目根目录创建此文件
+                        }
+                    } // postcss-loader options
+                },
+                {
+                    loader: 'sass-loader',
+                    options: {} // sass-loader options
+                }]
+            },
+            //PC编译
+            {
+                test: /\.scss$/,
+                include: path.resolve(__dirname, "src/asset/Pcss"),
+                use: [{
+                    loader: 'style-loader',
+                    options: {} // style-loader options
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 2 // css-loader options
+                    }
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        config: {
+                            path: 'postcss.pc.config.js'  // 这个得在项目根目录创建此文件
+                        }
+                    } // postcss-loader options
+                },
+                {
+                    loader: 'sass-loader',
+                    options: {} // sass-loader options
+                }]
             }
         ]
     },
@@ -137,7 +167,7 @@ module.exports = {
         new BundleAnalyzerPlugin(),
 
         new webpack.ProvidePlugin({
-            "React":"react",
+            // "React":"react",
             // 'window.React': 'react',
             'axios': 'axios'
         }),

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, Route, Switch, withRouter } from "react-router-dom";
-import { Layout, Form, Icon, message, Carousel, Input, Button, Checkbox, Timeline } from 'antd';
+import { Timeline,Icon } from 'antd';
 import { connect } from 'react-redux';
-const { Header, Content, Footer } = Layout;
 
 import { hisday } from "../../action/history";
 
@@ -54,8 +53,6 @@ class Hisday extends React.Component {
                     zIndex: 999
                 }} onClick={this.changeday} />
             </div>
-
-
         )
     }
 }

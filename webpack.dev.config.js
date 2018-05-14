@@ -6,6 +6,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
+
 function pathTo() {
     return path.join(__dirname, path.join.apply(path, arguments));
 }
@@ -30,15 +31,15 @@ module.exports = {
             }
         }
     },
-    entry: ['babel-polyfill','./src/main.jsx'],
+    entry: ['babel-polyfill', './src/main.jsx'],
     output: {
         path: path.join(__dirname, "./dist"),
         filename: 'bundle.js',
         publicPath: '/',
-        chunkFilename:'chunkRoute/[name].[chunkhash:8].chunk.js'
+        chunkFilename: 'chunkRoute/[name].[chunkhash:8].chunk.js'
     },
     resolve: {
-        extensions: ['.css', '.js', '.jsx','.scss'],
+        extensions: ['.css', '.js', '.jsx', '.scss'],
         alias: {
             actions: pathTo('src/actions'),
             assets: pathTo('src/assets'),
@@ -58,7 +59,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env','stage-0','react']
+                        presets: ['env', 'stage-0', 'react']
                     }
                 }
             },
@@ -71,8 +72,10 @@ module.exports = {
                 test: /\.(png|jpg|gif|jpeg)$/,
                 loader: 'url-loader?limit=2048'
             },
+            //exclude Pcss Mcss
             {
                 test: /\.scss$/,
+                include: path.resolve(__dirname, "src/asset/Publiccss"),
                 use: [{
                     loader: 'style-loader',
                     options: {} // style-loader options
@@ -94,6 +97,59 @@ module.exports = {
                     loader: 'sass-loader',
                     options: {} // sass-loader options
                 }]
+            },
+
+            //mobile编译
+            {
+                test: /\.scss$/,
+                include: path.resolve(__dirname, "src/asset/Mcss"),
+                use: [{
+                    loader: 'style-loader',
+                    options: {} // style-loader options
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 2 // css-loader options
+                    }
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        config: {
+                            path: 'postcss.config.mobile.js'  // 这个得在项目根目录创建此文件
+                        }
+                    } // postcss-loader options
+                },
+                {
+                    loader: 'sass-loader',
+                    options: {} // sass-loader options
+                }]
+            },
+            //PC编译
+            {
+                test: /\.scss$/,
+                include: path.resolve(__dirname, "src/asset/Pcss"),
+                use: [{
+                    loader: 'style-loader',
+                    options: {} // style-loader options
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 2 // css-loader options
+                    }
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        config: {
+                            path: 'postcss.pc.config.js'  // 这个得在项目根目录创建此文件
+                        }
+                    } // postcss-loader options
+                },
+                {
+                    loader: 'sass-loader',
+                    options: {} // sass-loader options
+                }]
             }
             // {
             //     test: /\.css$/,
@@ -103,7 +159,6 @@ module.exports = {
             //     test: /\.html$/,
             //     loader: 'html-loader'
             //   }
-
         ]
     },
     //performance 这些选项允许您控制webpack如何通知您超出特定文件限制的资产和入口点

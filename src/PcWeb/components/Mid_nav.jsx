@@ -2,7 +2,7 @@ import React, { Component, cloneElement } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Form, Icon, message, Carousel, Input, Button, Checkbox } from 'antd';
 const { Header, Content, Footer } = Layout;
-import "../../asset/css/Mid_nav.scss";
+import "../../asset/Pcss/Mid_nav.scss";
 
 class Mid_nav extends Component {
     render() {

@@ -1,18 +1,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import configStore from './store/configStore';
 import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
-// HashRouter
-import { render } from 'react-dom';
-
-import { createLogger } from 'redux-logger';
 import { HashRouter as Router, Switch, Route, IndexRoute, Link, Redirect } from 'react-router-dom';
 
-// import PcWeb from "./PcWeb/index";
-// import MobileWeb from "./MobileWeb/index";
 
 const store = configStore();
 
